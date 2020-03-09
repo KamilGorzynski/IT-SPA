@@ -9,6 +9,7 @@ lerna-debug.log*
 .idea/
 .vscode/
 env/
+__pycache__
 
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
