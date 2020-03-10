@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import { oops } from '../views/oops';
-import { setTitle } from '../views/rooms'
+import { getRoomsData } from '../rooms/getRooms'
 
 export class Router {
 
@@ -34,7 +34,7 @@ export class Router {
 
     fetchData(path) {
         if (path === '/rooms'){
-            setTitle();
+            getRoomsData();
         }
     }
 

@@ -1,0 +1,15 @@
+import $ from 'jquery';
+
+export const roomCard = (room) => {
+    return $(`
+    <div class="my_card">
+        <div class="card-body">
+            <h5 class="card-title">${room.name}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Price: ${room.price} EUR</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Guests: ${room.guests}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Beds: ${room.beds}</h6>    
+            <p class="card-text">${room.description}</p>
+        </div>
+    </div>
+    `)[0];
+};
