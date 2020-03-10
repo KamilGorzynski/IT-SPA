@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import { oops } from '../views/oops';
+import { setTitle } from '../views/rooms'
 
 export class Router {
 
@@ -31,6 +32,12 @@ export class Router {
         return this.get(path) !== undefined;
     }
 
+    fetchData(path) {
+        if (path === '/rooms'){
+            setTitle();
+        }
+    }
+
     navigate(path, data = {}) {
         if (this.has(path)) {
             // obsluguje istniejaca sciezke
@@ -38,6 +45,7 @@ export class Router {
             const html = component();
             // renderuje nowy widok wewnatrz elementu "outlet"
             this.outlet.empty().append(html);
+            this.fetchData(path)
         } else {
             // obluguje nieistniejaca sciezke (oops...)
             const html = oops();
