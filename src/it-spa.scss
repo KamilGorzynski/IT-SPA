@@ -28,6 +28,7 @@ main {
   width: 60rem;
   padding: 3rem 0 0 1.5rem;
   margin-bottom: 2rem;
+  border-radius: 0.2rem;
   @include marginAuto();
 }
 
@@ -75,4 +76,22 @@ footer {
   } 
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
