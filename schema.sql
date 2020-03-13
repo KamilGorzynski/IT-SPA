@@ -36,7 +36,10 @@ VALUES ('Room4',2,4,340.00);
 -- Treatments inserts
 
 INSERT INTO Treatments (name,area,time,price)
-VALUES ('hydromassage with essential oil','back','30',120.00);
+VALUES ('Hydromassage with oil','back','30',120.00);
 
-INSERT INTO Treatments (name,area,time,price,description)
-VALUES ('face massage','face','30',80.00);
+INSERT INTO Treatments (name,area,time,price)
+VALUES ('Face massage','face','30',80.00);
+
+INSERT INTO Treatments (name,area,time,price)
+VALUES ('Sugar peeling','all','20',60.00);

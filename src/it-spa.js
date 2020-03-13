@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery';
-import { popover } from '@popperjs/core';
 import './it-spa.scss';
 import { Router, routes } from './router';
 import { nav } from './navigation/nav';
