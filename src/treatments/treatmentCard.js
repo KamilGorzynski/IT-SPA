@@ -1,9 +1,9 @@
 import $ from 'jquery';
 
 export const treatmentCard = (treatment) => {
-    
     return $(`
         <div class="cardTreatment">
+            <img src="${treatment.photo}" class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">${treatment.name}</h5>
             <h6 class="card-subtitle mb-2 text-muted">Area: ${treatment.area}</h6>

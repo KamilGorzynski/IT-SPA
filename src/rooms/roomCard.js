@@ -1,7 +1,8 @@
 import $ from 'jquery';
 
+
 export const roomCard = (room) => {
-    return $(`
+    const card =  $(`
         <div class="my_card">
             <div class="card-body">
                 <h5 class="card-title">${room.name}</h5>
@@ -9,10 +10,13 @@ export const roomCard = (room) => {
                 <h6 class="card-subtitle mb-2 text-muted">Guests: ${room.guests}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">Beds: ${room.beds}</h6>    
                 <p class="card-text">${room.description}</p>
-                Arrival: <input type="date">
-                Departure: <input type="date">
-                <button type="button" class="btn btn-secondary">Add to cart</button>
+                <form>
+                    Arrival: <input class="arrival" type="date">
+                    Departure: <input class="departure" type="date">
+                    <button type="button" class="btn btn-secondary">Add to cart</button>
+                </form>         
             </div>
         </div>
     `)[0];
+    return card;
 };

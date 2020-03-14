@@ -11,6 +11,7 @@ export const nav = () => {
         <nav class="navbar navbar-expand navbar-dark ">
             <span class="navbar-brand">IT SPA</span>
             <ul class="navbar-nav mr-auto"></ul>
+            <span class="navbar-brand">Log in | Sign in</span>
         </nav>
     `);
 

@@ -8,12 +8,13 @@ CREATE TABLE Rooms (
 );
 
 CREATE TABLE Treatments (
-    id     INTEGER PRIMARY KEY AUTOINCREMENT,
-    name   VARCHAR (50),
-    area   VARCHAR (50),
-    time INT,
-    price  DECIMAL,
-    description TEXT DEFAULT description
+    id          INTEGER      PRIMARY KEY AUTOINCREMENT,
+    name        VARCHAR (50),
+    area        VARCHAR (50),
+    time        INT,
+    price       DECIMAL,
+    description TEXT         DEFAULT description,
+    photo       TEXT         DEFAULT [https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80]
 );
 
 
