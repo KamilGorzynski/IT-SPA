@@ -4,11 +4,14 @@ import './it-spa.scss';
 import { Router, routes } from './router';
 import { nav } from './navigation/nav';
 import { footer } from './footer/footer';
+import { Cart } from './cart/cart';
 
 
 const main = $('main');
 
 const router = new Router(routes);
+
+export let appCart = new Cart()
 
 main.before(nav);
 
