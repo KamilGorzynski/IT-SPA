@@ -3,8 +3,12 @@ export class Cart {
 
     constructor() {
         if (!this.cardExists()) {
-            document.cookie = `CART={}`;
+            this.clearCookies();    
         }      
+    }
+
+    clearCookies() {
+        document.cookie = `CART={}`;
     }
 
     cardExists() {

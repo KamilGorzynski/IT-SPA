@@ -2,6 +2,7 @@ import $ from 'jquery';
 import { oops } from '../views/oops';
 import { getRoomsData } from '../rooms/getRooms'
 import { getTreatmentsData } from '../treatments/getTreatments'
+import { getCartData } from '../bookings/getFromCart'
 
 export class Router {
 
@@ -38,6 +39,8 @@ export class Router {
             getRoomsData();
         }else if (path === '/treatments'){
             getTreatmentsData();
+        }else if (path === '/bookings'){
+            getCartData();
         }
     }
 

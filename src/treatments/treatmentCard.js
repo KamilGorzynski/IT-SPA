@@ -10,6 +10,7 @@ export const treatmentCard = (treatment) => {
             <h6 class="card-subtitle mb-2 text-muted">Time: ${treatment.time}</h6>
             <h6 class="card-subtitle mb-2 text-muted">Price: <span>${treatment.price}</span> EUR</h6>
             <p class="card-text">${treatment.description}</p>
+            <input type="number" max="10" min="1" value="1"></br>
             <button type="button" class="btn btn-secondary">Add to cart</button>
             </div>
         </div>

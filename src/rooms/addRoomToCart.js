@@ -41,7 +41,7 @@ function addRoomToCart(){
         
         const roomData = {
             'amount': dapArrDiff,
-            'price': childNodes[3].childNodes[1].innerText,
+            'price': Number(childNodes[3].childNodes[1].innerText),
             'arrival': childNodes[11].value,
             'departure': childNodes[13].value,
         }
