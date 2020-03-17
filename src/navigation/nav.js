@@ -1,5 +1,3 @@
-// nav.js
-
 import $ from 'jquery';
 import { routes } from '../router';
 import { navItem } from './nav-item';
@@ -11,11 +9,10 @@ export const nav = () => {
         <nav class="navbar navbar-expand navbar-dark ">
             <span class="navbar-brand">IT SPA</span>
             <ul class="navbar-nav mr-auto"></ul>
-            <span class="navbar-brand">Log in | Sign in</span>
+            <span class="navbar-brand">Log in | Sign up</span>
         </nav>
     `);
 
-    // uzupelnij <ul> elementami <li>
     const navBarItems = routes.map(route => navItem(route));
     
     navBar.find('ul').append(navBarItems);

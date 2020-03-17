@@ -1,5 +1,3 @@
-// treatments.js
-
 import $ from 'jquery';
 
 export const treatments = () => {
