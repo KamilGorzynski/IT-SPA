@@ -47,7 +47,7 @@ function addRoomToCart(){
         }
     
         appCart.addToCart(roomKey, roomData)
-        alert('Room added to Cart');
+        alert('Room has been added to Cart');
     }
 }
 

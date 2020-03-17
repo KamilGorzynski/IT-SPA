@@ -1,5 +1,11 @@
 import $ from 'jquery';
+import Icon from "../assets/triangle.png";
 
 export const serviceInactive = () => {
-    return $(`<h4>Przepraszamy, serwis czasowo niedostępny.</h4>`)[0];
+    return $(`
+        <div class="serviceInactive">
+            <h4>Sorry, service temporarily inactive</h4>
+            <img src="${Icon}" />
+        </div>    
+    `)[0];
 };

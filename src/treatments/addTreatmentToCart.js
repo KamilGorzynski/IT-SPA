@@ -16,7 +16,7 @@ function addTreatmentToCart(){
     }
 
     appCart.addToCart(treatmentKey, treatmentData)
-    alert('Treatment added to Cart');
+    alert('Treatment has been added to Cart');
 }
 
 export function addListeners() {

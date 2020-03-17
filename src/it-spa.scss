@@ -23,12 +23,23 @@ body {
   cursor: context-menu;
 }
 
+.serviceInactive,
+.notFound {
+  @include marginAuto();
+  width: 50%;
+  margin-top: 5rem; 
+  text-align: center;
+  img {
+    margin-top: 2rem;
+  }
+}
+
 main {
   background-color: rgba(170, 170, 170, 0.7);
   background-size: cover;
   height: 80vh;
   width: 60rem;
-  padding: 3rem 1rem 0 1.5rem;
+  padding: 3rem 1rem 0 1rem;
   margin-bottom: 2rem;
   border-radius: 0.2rem;
   @include marginAuto();

@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { oops } from '../views/oops';
+import { notFound } from '../views/notFound';
 import { getRoomsData } from '../rooms/getRooms'
 import { getTreatmentsData } from '../treatments/getTreatments'
 import { getCartData } from '../bookings/getFromCart'
@@ -54,7 +54,7 @@ export class Router {
             this.fetchData(path)
         } else {
             // obluguje nieistniejaca sciezke (oops...)
-            const html = oops();
+            const html = notFound();
             this.outlet.empty().append(html);
         }
 
