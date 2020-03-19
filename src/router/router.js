@@ -1,13 +1,14 @@
 import $ from 'jquery';
 import { notFound } from '../views/notFound';
-import { getRoomsData } from '../rooms/getRooms'
-import { getTreatmentsData } from '../treatments/getTreatments'
-import { getCartData } from '../bookings/getFromCart'
+import { getRoomsData } from '../rooms/getRooms';
+import { getTreatmentsData } from '../treatments/getTreatments';
+import { getCartData } from '../bookings/getFromCart';
 
 export class Router {
 
-    constructor(routes) {
+    constructor(routes, userRoutes) {
         this.routes = routes;
+        this.userRoutes = userRoutes;
         this.outlet;
         this.body = $(document.body);
     }
@@ -26,8 +27,8 @@ export class Router {
     }
 
     get(path) {
-        // znajduje sciezke o zadanym path lub zwraca undefined
-        return this.routes.find(route => route.path === path);
+        return this.routes.find(route => route.path === path) || 
+        this.userRoutes.find(route => route.path === path);
     }
 
     has(path) {
@@ -45,21 +46,17 @@ export class Router {
     }
 
     navigate(path, data = {}) {
+        console.log(this)
         if (this.has(path)) {
-            // obsluguje istniejaca sciezke
             const { component } = this.get(path);
             const html = component();
-            // renderuje nowy widok wewnatrz elementu "outlet"
             this.outlet.empty().append(html);
             this.fetchData(path)
         } else {
-            // obluguje nieistniejaca sciezke (oops...)
             const html = notFound();
             this.outlet.empty().append(html);
         }
 
-        // zapamietuje nowy "stan" w przegladarce oraz
-        // ustawia wybrana sciezke -- path
         history.pushState(data, '', path);
     }
 
