@@ -46,7 +46,6 @@ export class Router {
     }
 
     navigate(path, data = {}) {
-        console.log(this)
         if (this.has(path)) {
             const { component } = this.get(path);
             const html = component();

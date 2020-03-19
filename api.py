@@ -1,45 +1,75 @@
 from flask import Flask
 from flask_restful import Api
 from flask_cors import CORS
-from flask import g
-import json
+from flask_sqlalchemy import SQLAlchemy
+from flask import jsonify
 
-import sqlite3
-import os
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///it-spa.db'
+db = SQLAlchemy(app)
 CORS(app)
 api = Api(app)
 
 
-def get_db():
-    if not g.get('db'):
-        con = sqlite3.connect(os.path.join(app.root_path, 'it-spa.db'))
-        con.row_factory = sqlite3.Row
-        g.db = con
-    return g.db
+class User(db.Model):
+    __tablename__ = 'Users'
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(32))
+    password_hash = db.Column(db.String(128))
 
 
-@app.teardown_appcontext
-def close_db(error):
-    if g.get('db'):
-        g.db.close()
+class Rooms(db.Model):
+    __tablename__ = 'Rooms'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=True)
+    beds = db.Column(db.Integer, nullable=True)
+    guests = db.Column(db.Integer, nullable=True)
+    price = db.Column(db.Float, nullable=True)
+    description = db.Column(db.Text, default='Description')
 
 
-def get_all_from_table(table):
-    db = get_db()
-    cursor = db.execute('SELECT * FROM {0};'.format(table))
-    return json.dumps([dict(row) for row in cursor.fetchall()])
+class Treatments(db.Model):
+    __tablename__ = 'Treatments'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=True)
+    area = db.Column(db.String(50), nullable=True)
+    time = db.Column(db.Integer, nullable=True)
+    price = db.Column(db.Float, nullable=True)
+    description = db.Column(db.Text, default='Description')
+    photo = db.Column(db.Text, default='https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
 
 
 @app.route('/rooms')
 def rooms():
-    return get_all_from_table('Rooms')
+    rooms_list = []
+    for room in Rooms.query.all():
+        rooms_list.append({
+            "id": room.id,
+            "name": room.name,
+            "beds": room.beds,
+            "guests": room.guests,
+            "price": room.price,
+            "description": room.description
+        })
+    return jsonify(rooms_list)
 
 
 @app.route('/treatments')
 def treatments():
-    return get_all_from_table('Treatments')
+    treatments_list = []
+    for treatment in Treatments.query.all():
+        treatments_list.append({
+            "id": treatment.id,
+            "name": treatment.name,
+            "area": treatment.area,
+            "time": treatment.time,
+            "price": treatment.price,
+            "description": treatment.description,
+            "photo": treatment.photo
+        })
+
+    return jsonify(treatments_list)
 
 
 if __name__ == '__main__':
