@@ -161,22 +161,25 @@ footer {
 }
 
 
+
 .signUpSection{
   margin-top: 3rem;
   margin-left: 2rem;
   width: 20rem;
   @include border();
   border-radius: 0.5rem;
+  padding: 1rem;
   input {
-    margin: 0.5rem 1rem;
+    margin: 0.5rem 0;
     background-color: lightgrey;
   }
   button {
-    margin: 0 1rem 1rem;
     background-color: #373738;
     color: white;
     width: 6rem;
     height: 2.5rem;
+    @include border();
+    border-radius: 0.5rem;
   }
 }
 

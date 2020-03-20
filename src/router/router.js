@@ -3,6 +3,7 @@ import { notFound } from '../views/notFound';
 import { getRoomsData } from '../rooms/getRooms';
 import { getTreatmentsData } from '../treatments/getTreatments';
 import { getCartData } from '../bookings/getFromCart';
+import { createUser } from '../signUp/createUser';
 
 export class Router {
 
@@ -42,6 +43,8 @@ export class Router {
             getTreatmentsData();
         }else if (path === '/bookings'){
             getCartData();
+        }else if (path === '/sign-up'){
+            createUser();
         }
     }
 

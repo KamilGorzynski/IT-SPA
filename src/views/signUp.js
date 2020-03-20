@@ -3,17 +3,16 @@ import $ from 'jquery';
 export const signUp = () => {
     const fragment = $(new DocumentFragment());
 
-    const h1 = $('<h1>Sign up</h1>');
+    const h1 = $('<h1>Sign Up</h1>');
 
     const signUpDiv = $(`
     <section class="signUpSection">
-        <form class="converter">
-
-        <input id="login" placeholder='Login' type="text"><br/>
-        <input type="email" placeholder='Email' id="email" name="email"><br/>
-        <input id="password" placeholder='Password' type="password"><br/>
-        <input id="confirmPassword" placeholder='Confirm password' type="password"><br/>
-        <button type="button" class="btn btn-secondary">Sign up</button>
+        <form>
+            <input class="login" placeholder='Login' type="text"><br/>
+            <input type="email" placeholder='Email' class="email" name="email"><br/>
+            <input class="password" placeholder='Password' type="password"><br/>
+            <input class="confirmPassword" placeholder='Confirm password' type="password"><br/>
+            <button type="button" class="signUpBtn btn btn-secondary">Sign up</button>
         </form>
     </section>
     `);
