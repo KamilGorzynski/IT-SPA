@@ -4,6 +4,7 @@ import { getRoomsData } from '../rooms/getRooms';
 import { getTreatmentsData } from '../treatments/getTreatments';
 import { getCartData } from '../bookings/getFromCart';
 import { createUser } from '../signUp/createUser';
+import { logInUser } from '../logIn/logIn';
 
 export class Router {
 
@@ -45,6 +46,8 @@ export class Router {
             getCartData();
         }else if (path === '/sign-up'){
             createUser();
+        }else if (path === '/log-in'){
+            logInUser();
         }
     }
 

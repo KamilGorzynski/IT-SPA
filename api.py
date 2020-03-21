@@ -119,7 +119,6 @@ def rooms():
 
 
 @app.route('/treatments')
-@auth.login_required
 def treatments():
     treatments_list = []
     for treatment in Treatments.query.all():

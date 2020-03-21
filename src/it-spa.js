@@ -9,7 +9,7 @@ import { Cart } from './cart/cart';
 
 const main = $('main');
 
-const router = new Router(routes, userRoutes);
+export const router = new Router(routes, userRoutes);
 
 export let appCart = new Cart()
 

@@ -1,3 +1,6 @@
+import { serviceInactive } from '../common/serviceInactive';
+
+
 const axios = require('axios').default;
 
 function makeUser() {
@@ -7,10 +10,11 @@ function makeUser() {
         "email": document.querySelector('.email').value
     })
     .then(function (response) {  
-       alert(response.data.details)
+       alert(response.data.details);
     })
     .catch(function (error) {
-        console.log(error)
+        document.querySelector('.signUpDiv').innerHTML = '';
+        document.querySelector('.signUpDiv').append(serviceInactive());
     });
 }
 
