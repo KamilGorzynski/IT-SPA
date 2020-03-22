@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import { routes, userRoutes } from '../router';
 import { navItem } from './nav-item';
+import { loggedNavItem } from './logged-nav-items';
+import { appCart } from '../it-spa';
 
 export const nav = () => {
     const fragment = $(new DocumentFragment());
@@ -14,11 +16,17 @@ export const nav = () => {
     `);
 
     const navBarItems = routes.map(route => navItem(route));
-    const userItems = userRoutes.map(route => navItem(route));
-    
     navBar.find('.mainNav').append(navBarItems);
+    
+    let userItems;
+    // console.log(appCart.userIsLogged())
+    if (appCart.userIsLogged()) {
+        userItems = loggedNavItem();
+    } else {
+        userItems = userRoutes.map(route => navItem(route)); 
+    }
+    
     navBar.find('.userNav').append(userItems);
-
     fragment.append(navBar);
 
     return fragment;

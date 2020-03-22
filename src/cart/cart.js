@@ -2,18 +2,25 @@
 export class Cart {
 
     constructor() {
-        if (!this.cardExists()) {
-            this.clearCookies();    
-        }      
+        if (!this.cookieExists('cart')) {
+            this.clearCart();    
+        }
+        if (!this.cookieExists('token')) {
+            this.clearTokenAndUser();
+        }       
     }
 
-    clearCookies() {
+    clearCart() {
         document.cookie = `cart={}`;
     }
 
-    cardExists() {
+    getCookie(myCookie) {
         const cookies = document.cookie.split(';');
-        return cookies.find(item => item.includes('cart')) !== undefined;
+        return cookies.find(item => item.includes(myCookie))
+    }
+
+    cookieExists(cookie) {
+        return this.getCookie(cookie) !== undefined;
     }
 
     getCartObject() {
@@ -36,13 +43,25 @@ export class Cart {
         document.cookie = `cart=${stringifyCard}`; 
     }
 
-    addAuthToken(token) {
-        document.cookie = `token=${token}`;
+    userIsLogged(){
+        const isUser = this.getCookie('user').split('=')[1];
+        const isToken = this.getCookie('user').split('=')[1];
+        if (isUser && isToken){     
+             return true;   
+        } else {
+            return false;
+        }
     }
 
-    tokenExists() {
-        const cookies = document.cookie.split(';');
-        return cookies.find(item => item.includes('token')) !== undefined;
+    addTokenAndUser(token, user) {
+        document.cookie = `token=${token}`;
+        document.cookie = `user=${user}`;
     }
+
+    clearTokenAndUser() {
+        document.cookie = `token=`;
+        document.cookie = `user=`;
+    }
+
 }
 

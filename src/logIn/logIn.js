@@ -1,25 +1,28 @@
-import { appCart } from '../it-spa';
+import { appCart, router } from '../it-spa';
 import { serviceInactive } from '../common/serviceInactive';
-import { router } from '../it-spa';
 
 const axios = require('axios').default;
 
 function getToken(){
+    const login = document.querySelector('.login').value
     axios.get('http://localhost:5000/token', {
         auth: {
-          username: document.querySelector('.login').value,
+          username: login,
           password: document.querySelector('.password').value
         }
       })
     .then(function (response) {
-       appCart.addAuthToken(response.data.token);
+       appCart.addTokenAndUser(response.data.token, login);
        router.navigate('/');
+       location.reload();
     })
     .catch(function (error) {
-        if (error.response.status === 401) {
-            alert('Invalid login or password');
-            location.reload();
-        }
+        if (response) {
+            if (error.response.status === 401) {
+                alert('Invalid login or password');
+                location.reload();
+            }
+        }        
         else {
             document.querySelector('.logInDiv').innerHTML = '';
             document.querySelector('.logInDiv').append(serviceInactive());

@@ -37,7 +37,7 @@ export class Router {
         return this.get(path) !== undefined;
     }
 
-    fetchData(path) {
+    prepareComponents(path) {
         if (path === '/rooms'){
             getRoomsData();
         }else if (path === '/treatments'){
@@ -56,7 +56,7 @@ export class Router {
             const { component } = this.get(path);
             const html = component();
             this.outlet.empty().append(html);
-            this.fetchData(path)
+            this.prepareComponents(path)
         } else {
             const html = notFound();
             this.outlet.empty().append(html);

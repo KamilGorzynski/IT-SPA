@@ -2,7 +2,6 @@ import { roomCard } from './roomCard';
 import { addListeners } from './addRoomToCart';
 import { serviceInactive } from '../common/serviceInactive'
 
-
 const axios = require('axios').default;
 
 export function getRoomsData(){
