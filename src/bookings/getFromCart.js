@@ -9,7 +9,7 @@ function removeProduct() {
 
 
 function removeAllProducts() {
-    appCart.clearCookies()
+    appCart.clearCart()
     location.reload();
 };
 

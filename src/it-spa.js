@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery';
 import './it-spa.scss';
-import { Router, routes } from './router';
+import { Router, routes, userRoutes } from './router';
 import { nav } from './navigation/nav';
 import { footer } from './footer/footer';
 import { Cart } from './cart/cart';
@@ -9,7 +9,7 @@ import { Cart } from './cart/cart';
 
 const main = $('main');
 
-const router = new Router(routes);
+export const router = new Router(routes, userRoutes);
 
 export let appCart = new Cart()
 

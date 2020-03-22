@@ -2,6 +2,9 @@
     box-sizing: border-box;
 }
 
+@mixin border() {
+  border: solid rgba(119, 119, 119, 0.5) 1px;
+}
 
 @mixin marginAuto() {
   margin-left: auto;
@@ -82,13 +85,13 @@ footer {
   padding: 1.5rem 0.5rem 0 0;
   justify-content: space-around;
   .my_card {
-    border: solid rgba(119, 119, 119, 0.5) 1px;
+    @include border();
     margin: 1rem 0;
     border-radius: 0.5rem;
   }
   input {
     border-radius: 0.2rem;
-    border: solid rgba(119, 119, 119, 0.5) 1px;
+    @include border();
     color: white;
     background-color: #6c757d;
   }
@@ -101,7 +104,7 @@ footer {
   display: flex;
   margin-top: 1.5rem;
   .cardTreatment {
-    border: solid rgba(119, 119, 119, 0.5) 1px;
+    @include border();
     margin: 1.5rem;
     width: 16rem;
     border-radius: 0.5rem;
@@ -110,7 +113,7 @@ footer {
     width: 3rem;
     margin-bottom: 0.5rem;
     border-radius: 0.2rem;
-    border: solid rgba(119, 119, 119, 0.5) 1px;
+    @include border();
     color: white;
     background-color: #6c757d;
   }
@@ -156,3 +159,34 @@ footer {
     width: 10%;
   }
 }
+
+.signUpSection{
+  margin-top: 3rem;
+  margin-left: 2rem;
+  width: 20rem;
+  @include border();
+  border-radius: 0.5rem;
+  padding: 1rem;
+  input {
+    margin: 0.5rem 0;
+    background-color: lightgrey;
+  }
+  button {
+    background-color: #373738;
+    color: white;
+    width: 6rem;
+    height: 2.5rem;
+    @include border();
+    border-radius: 0.5rem;
+  }
+}
+
+.pass_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
