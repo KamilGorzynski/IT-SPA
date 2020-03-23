@@ -5,3 +5,4 @@ export * from './bookings';
 export * from './notFound';
 export * from './signUp';
 export * from './logIn';
+export * from './contact';
