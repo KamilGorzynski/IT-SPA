@@ -33,7 +33,7 @@ export function checkPasswordStrength() {
         passwordStrength.innerHTML = 'Moderate';
         passwordStrength.style.color = '#e65c00';
     } else if (password_value) {
-        passwordStrength.innerHTML = 'Week';
+        passwordStrength.innerHTML = 'Weak';
         passwordStrength.style.color = 'red';
     } else {
         passwordStrength.innerHTML = '';
