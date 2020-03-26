@@ -183,6 +183,11 @@ footer {
     width: 1.1rem;
     height: 1.1rem;
   }
+  #passwordStrength {
+    text-align:right;
+    margin-left: 0.3rem;
+    font-weight: bold;
+  }
 }
 
 .pass_info {
@@ -206,5 +211,3 @@ footer {
     border: 5px solid rgba(71, 71, 71, 0.5);
   }
 }
-
-

@@ -1,4 +1,5 @@
 import { serviceInactive } from '../common/serviceInactive';
+import { checkPasswordStrength } from './passwordStrength';
 
 
 const axios = require('axios').default;
@@ -28,7 +29,10 @@ function makeUser() {
     if (!login || !password || !confirmPassword || !email){
         alert('Fill up all fields');
         return;
-    } else if (confirmPassword !== password) {
+    }else if (login === password) {
+        alert('Login as passwords is a bad idea');
+        return;
+    }else if (confirmPassword !== password) {
         alert('Different passwords');
         return;
     }
@@ -50,5 +54,6 @@ function acceptPolicy() {
 export function createUser() {
     document.querySelector('.signUpBtn').addEventListener('click', makeUser);
     document.querySelector('#privacyCheckobox').addEventListener('change', acceptPolicy);
+    document.querySelector('.password').addEventListener('input', checkPasswordStrength);
 }
 
