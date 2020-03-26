@@ -1,71 +1,42 @@
-# IT SPA
+# IT-SPA
 
-Projekt polega na napisaniu aplikacji Single Page Application dla ośrodka SPA dedykowanego programistom.
 
-Aplikacja powinna umożliwiać: 
+## Project is created with:
 
-- Przeglądanie dostępnych zabiegów
-- Dodawanie wybranych zabiegów do koszyka
-- Wybór daty przyjazdu i wyjazdu oraz pokoju  
-- Rejestrację użytkownika (opcjonalnie)
-- Logowanie użytkownika (opcjonalnie)
-- Podsumowanie składanego zamówienia
+* Python              3.7.0
+* Flask              1.1.1
+* Flask-Cors       3.0.8
+* Flask-HTTPAuth   3.3.0
+* Flask-RESTful    0.3.8
+* Flask-SQLAlchemy 2.4.1
+* npm 6.13.4
+* axios 0.19.2
+* bootstrap 4.4.1
+* jquery 3.4.1
 
-## Booking
+## Installing
+I. Clone the project:
+```
+git clone https://github.com/KamilGorzynski/IT-SPA.git
+cd it-spa
+```
 
-Stwórz komponent koszyka, który wyświetla podsumowanie zamówienia.
-Koszyk powinien też umożliwiać nanoszenie poprawek do zamówienia.
-Użytkownik nie może wybrać daty przyjazdu wcześniejszej niż bieżąca.
-Wybrana data wyjazdu nie może być dalsza niż rok od daty przyjazdu.
+II. Server side instalations:
+```
+pip install -r requirements.txt
+```
 
-## Rejestracja
+III. Client side instalations:
+```
+npm install
+```
+## Start client side:
+```
+npm run start:app
+```
 
-Stwórz komponent rejestracji użytkownika z opcjonalnym miernikiem siły hasła.
-Rejestracja polega na zapisaniu danych użytkownika (e-mail i hasła) w pliku `database.json`.
-Nie powinna być możliwa rejestracja użytkownika o identycznym adresie e-mail.
+## Start server side:
+```
+python api.py
+```
 
-## Logowanie
-
-Stwórz komponent logowania użytkownika, który opcjonalnie będzie wyświetlał avatar użytkownika.
-Logowanie polega na porównaniu podanych przez użytkownika danych (e-mail i hasła) z tymi w pliku `database.json`.
-
-## Pokoje
-
-Bazę przykładowych pokoi w ośrodku IT SPA znajdziesz w pliku `database.json`.
-Możesz dowolnie zmienić istniejące pokoje lub dodać swoje własne. 
-
-## Zabiegi 
-
-Bazę przykładowych zabiegów ośrodka IT SPA znajdziesz w pliku `database.json`.
-Możesz dowolnie zmienić istniejące zabiegi lub dodać swoje własne. 
-
-## Koszyk
-
-Stwórz komponent koszyka, który po najechaniu myszką będzie wyświetlał dodane pokoje i zabiegi.
-Koszyk musi przetrwać przeładowanie strony, dlatego spróbuj wykorzystać ciasteczka (Cookies).
-
-## Technologie
-
-- HTML, Bootstrap
-- CSS, Sass, LESS
-- JavaScript, jQuery
-- Node, Express
-
-Postaraj się korzystać z ECMAScript 6.
-
-Do interakcji z serwerem bazy danych wykorzystaj `fetch`.
-Jeśli lubisz eksperymenty, zainstaluj pakiet `axios`.
-
-## Ocena
-
-Zamieść gotowy projekt na swoim GitHubie.
-Postaraj się oddać projekt do końca maja 2020.
-
-## Przykłady
-
-Strony, którymi możesz się inspirować: 
-
-- afrodyta-spa.pl
-- bukowypark.pl
-- hotelczarnypotok.pl
-- hotelniemcza.pl
