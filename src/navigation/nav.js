@@ -19,7 +19,6 @@ export const nav = () => {
     navBar.find('.mainNav').append(navBarItems);
     
     let userItems;
-    // console.log(appCart.userIsLogged())
     if (appCart.userIsLogged()) {
         userItems = loggedNavItem();
     } else {
