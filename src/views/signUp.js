@@ -13,7 +13,9 @@ export const signUp = () => {
                     <input type="email" placeholder='Email' class="email" name="email"><br/>
                     <input class="password" placeholder='Password' type="password"><br/>
                     <input class="confirmPassword" placeholder='Confirm password' type="password"><br/>
-                    <button type="button" class="signUpBtn btn btn-secondary">Sign up</button>
+                    <input type="checkbox" id="privacyCheckobox" value="true">
+                    <label for="privacyCheckobox">I agree to IT-SPA Privacy Policy.</label><br>
+                    <button type="button" disabled class="signUpBtn btn btn-secondary">Sign up</button>
                 </form>
             </section>
         </div>

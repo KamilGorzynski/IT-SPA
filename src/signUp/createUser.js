@@ -36,9 +36,19 @@ function makeUser() {
     makeUserRequest(login, password, email);
 }
 
+function acceptPolicy() {
+    const privacyCheckobox = document.querySelector('#privacyCheckobox');
+    const signUpBtn = document.querySelector('.signUpBtn');
+    if (privacyCheckobox.checked === true) {
+        signUpBtn.removeAttribute('disabled');
+    } else {
+        signUpBtn.setAttribute('disabled', true);
+    }
+}
 
 
 export function createUser() {
     document.querySelector('.signUpBtn').addEventListener('click', makeUser);
+    document.querySelector('#privacyCheckobox').addEventListener('change', acceptPolicy);
 }
 
