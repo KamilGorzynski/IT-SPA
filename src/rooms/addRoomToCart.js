@@ -53,7 +53,7 @@ function addRoomToCart(){
 
 
 export function addListeners() {
-    const buttons = document.querySelectorAll('button');
+    const buttons = document.querySelectorAll('.AddToCart');
     for (let i=0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', addRoomToCart)
     }

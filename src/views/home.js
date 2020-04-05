@@ -7,7 +7,7 @@ export const home = () => {
 
     const h1 = $('<h1>Home</h1>');
     const p = $(`
-    <div class="home">
+    <div class="home col">
         <img src="https://images.unsplash.com/photo-1560932992-a93e9ca8a0c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" />
         <p>
         Quisque elementum dictum ex, nec semper nibh luctus id. Nunc a pharetra sapien. 

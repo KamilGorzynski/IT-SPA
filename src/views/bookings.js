@@ -23,7 +23,7 @@ export const bookings = () => {
         <th scope="col">Total</th>
         <th scope="col"></th>
         <th class="total" scope="col">0</th>
-        <th scope="col"><button type="button" class="clearCart btn btn-danger">Clear</button></th>
+        <th scope="col" class="center"><button type="button" class="clearCart btn btn-danger">Clear</button></th>
         </tr>
     </thead>
     </table>

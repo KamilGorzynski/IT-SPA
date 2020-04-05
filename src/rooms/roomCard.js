@@ -13,7 +13,7 @@ export const roomCard = (room) => {
                 
                 Arrival: <input class="arrival" type="date">
                 Departure: <input class="departure" type="date">
-                <button type="button" class="btn btn-secondary">Add to cart</button>        
+                <button type="button" class="AddToCart btn btn-secondary">Add to cart</button>        
             </div>
         </div>
     `)[0];

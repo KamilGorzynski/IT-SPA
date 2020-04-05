@@ -8,11 +8,17 @@ export const nav = () => {
     const fragment = $(new DocumentFragment());
 
     const navBar = $(`
-        <nav class="navbar navbar-expand navbar-dark ">
-            <span class="navbar-brand">IT SPA</span>
-            <ul class=" mainNav navbar-nav mr-auto"></ul>
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <span class="navbar-brand">IT SPA</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class=" mainNav navbar-nav mr-auto">     
+            </ul>
             <span class="navbar-brand"><ul class="userNav navbar-nav mr-auto"></ul></span>
-        </nav>
+        </div>
+    </nav>
     `);
 
     const navBarItems = routes.map(route => navItem(route));

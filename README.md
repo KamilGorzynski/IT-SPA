@@ -14,19 +14,19 @@
 * bootstrap 4.4.1
 * jquery 3.4.1
 
-## Installing
+## Installation
 I. Clone the project:
 ```
 git clone https://github.com/KamilGorzynski/IT-SPA.git
 cd it-spa
 ```
 
-II. Server side instalations:
+II. Server side installations:
 ```
 pip install -r requirements.txt
 ```
 
-III. Client side instalations:
+III. Client side installations:
 ```
 npm install
 ```

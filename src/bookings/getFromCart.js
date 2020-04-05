@@ -15,7 +15,7 @@ function removeAllProducts() {
 
 
 function addListeners() {
-    const buttons = document.querySelectorAll('button');
+    const buttons = document.querySelectorAll('.removeProduct');
     for (let i=0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', removeProduct)
     }
