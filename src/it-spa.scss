@@ -54,7 +54,7 @@ body {
 main {
   background-color: rgba(170, 170, 170, 0.7);
   background-size: cover;
-  height: 80vh;
+  height: 75vh;
   width: 75%;
   padding: 3rem 1rem 0 1rem;
   margin-bottom: 2rem;
@@ -129,11 +129,11 @@ footer {
 
 .treatments {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 1.5rem;
   .cardTreatment {
     @include border();
     margin: 1.5rem;
-    width: 16rem;
     border-radius: 0.5rem;
   }
   input {
