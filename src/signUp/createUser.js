@@ -20,6 +20,8 @@ function makeUserRequest(login, password, email) {
     });
 }
 
+const emailIsCorrect = (string) => /^[\w\d]+\.[\w\d]+@[\w\d]+\.[\w\d]+$/.test(string);
+
 function makeUser() {
     const login = document.querySelector('.login').value;
     const password = document.querySelector('.password').value;
@@ -34,6 +36,9 @@ function makeUser() {
         return;
     }else if (confirmPassword !== password) {
         alert('Different passwords');
+        return;
+    }else if (!emailIsCorrect(email)) {
+        alert('Incorrect email adress');
         return;
     }
 
