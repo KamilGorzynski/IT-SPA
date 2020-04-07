@@ -9,11 +9,17 @@ export const roomCard = (room) => {
                 <h6 class="card-subtitle mb-2 text-muted">Price: <span>${room.price}</span> EUR</h6>
                 <h6 class="card-subtitle mb-2 text-muted">Guests: ${room.guests}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">Beds: ${room.beds}</h6>    
-                <p class="card-text">${room.description}</p>
+                <p class="card-text">${room.description}</p>  
                 
-                Arrival: <input class="arrival" type="date">
-                Departure: <input class="departure" type="date">
-                <button type="button" class="AddToCart btn btn-secondary">Add to cart</button>        
+                    <label for="arrival"><h6 class="card-subtitle mb-2 text-muted">Arrival:</h6></label>
+                    <input class="arrival" id="arrival" type="date"></br>
+                
+                    <label for="departure"><h6 class="card-subtitle mb-2 text-muted">Departure:</h6></label>
+                    <input class="departure" id="departure" type="date"></br>
+                    
+                    <button type="button" class="AddToCart btn btn-secondary">Add to cart</button>
+                
+                                         
             </div>
         </div>
     `)[0];

@@ -1,5 +1,5 @@
 *, *::before, *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @mixin border() {
@@ -13,12 +13,12 @@
 }
 
 html {
-  font-size: 14px;
+font-size: 14px;
 }
 
 @media screen and (min-width: 900px) {
   html {
-      font-size: 16px;
+    font-size: 16px;
   }
 }
 
@@ -54,7 +54,7 @@ body {
 main {
   background-color: rgba(170, 170, 170, 0.7);
   background-size: cover;
-  height: 75vh;
+  height: 80.7vh;
   width: 75%;
   padding: 3rem 1rem 0 1rem;
   margin-bottom: 1rem;
@@ -64,11 +64,20 @@ main {
 
 .navbar {
   width: 75%;
+  height: 10%;
   @include marginAuto();
   outline: none;
   outline-style: none;
   font-size: 1.2rem;
 }
+
+@media screen and (min-width: 1140px) {
+  .navbar,
+  main {
+    width: 60rem;
+  }
+}
+
 
 .userNav {
   font-size: 1.2rem;
@@ -84,6 +93,7 @@ main {
 footer {
   text-align: center;
   color: white;
+  height: auto;
   padding: 0.7rem;
   background-color: rgb(8, 8, 8);
   border-top: rgba(49, 43, 43, 0.7) solid 1px;
@@ -101,11 +111,9 @@ footer {
         text-decoration: none;
       }
   }
-
   p {
     margin-bottom: 0;
   }
-
 }
 
 .rooms {
@@ -124,6 +132,9 @@ footer {
   }
   button {
     background-color: #373738;
+  }
+  label {
+    width: 6rem;
   } 
 }
 
@@ -156,27 +167,26 @@ footer {
     margin: 0 1rem 1rem 0;
     float: left;
   }
-  
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 15px;
+width: 15px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+background: #f1f1f1; 
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+background: #888; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+background: #555; 
 }
 
 .table {
@@ -216,7 +226,6 @@ footer {
     font-weight: bold;
   }
 }
-
 
 .contactDiv {
   margin-top: 2rem;
