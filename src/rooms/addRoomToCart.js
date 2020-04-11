@@ -4,8 +4,8 @@ import { appCart } from '../it-spa';
 let dapArrDiff;
 
 function dateValidate(btn) {
-    const arrival = new Date(btn.parentElement.childNodes[11].value);
-    const departure = new Date(btn.parentElement.childNodes[13].value);
+    const arrival = new Date(btn.parentElement.childNodes[13].value);
+    const departure = new Date(btn.parentElement.childNodes[18].value);
     const today = new Date();
     const one_day = 1000 * 60 * 60 * 24
     
